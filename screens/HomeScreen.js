@@ -1,4 +1,4 @@
-import { View, Image, Text, TextInput, ScrollView } from 'react-native'
+import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,8 +13,11 @@ import {
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 
+import useFirestoreData from '../hooks/UseFirestoreData';
+
 const HomeScreen = () => {
 
+    // Naviagation Implementation
     const navigation = useNavigation()
 
     useLayoutEffect(() => {
@@ -23,22 +26,38 @@ const HomeScreen = () => {
         })
     }, [])
 
+
+    // Firestore Data Fetching
+    const data = useFirestoreData('Test');
+
+    console.log(data)
+
+    // If not loaded, return loading indicator
+    if (!data || data.length === 0) {
+        return (
+          <SafeAreaView style={{flex: 1}}>
+            <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="gray" />
+          </SafeAreaView>
+        );
+    }
+
     return (
         <SafeAreaView>
             <StatusBar backgroundColor="white" barStyle="dark-content" />
             <View className='bg-white pt-4'>
+
                 {/* Top View */}
-                <View className='flex-row pb-3 items-center mx-4 space-x-2'>
+                <View className='flex-row pb-3 items-center mx-4 space-x-3'>
                     <Image
                         source={{uri: 'https://i.imgur.com/29Rvtdt.png'}}
-                        className='h-7 w-7 bg-gray-300 p<StatusBar style="auto" />-4 rounded-full'
-                        />
+                        className='h-7 w-7 bg-gray-300 p-4 rounded-full'
+                    />
                     <View className='flex-1'>
                         <Text className='font-bold text-gray-400 text-xs'>Deliver Now!</Text>
-                        <Text className='font-bold text-xl'>
-                        Current Location
-                            <ChevronDownIcon size={20} color='#00CCBB' />    
-                        </Text>
+                        <View className='flex-row items-center'>
+                            <Text className='font-bold text-lg'>Current Location</Text>
+                            <ChevronDownIcon style={{ marginLeft: 4 }} size={20} color='#00CCBB' />
+                        </View>
                     </View>
                     <UserCircleIcon size={35} color='#00CCBB' />
                 </View>
