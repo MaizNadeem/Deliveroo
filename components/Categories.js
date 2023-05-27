@@ -25,6 +25,22 @@ const Categories = () => {
             imgUrl='https://i.imgur.com/R9MiezE.jpg' 
             title='Testing 3'
         />
+        <CategoryCard 
+            imgUrl='https://i.imgur.com/R9MiezE.jpg' 
+            title='Testing 4'
+        />
+        <CategoryCard 
+            imgUrl='https://i.imgur.com/R9MiezE.jpg'
+            title='Testing 5'
+        />
+        <CategoryCard 
+            imgUrl='https://i.imgur.com/R9MiezE.jpg' 
+            title='Testing 6'
+        />
+        <CategoryCard 
+            imgUrl='https://i.imgur.com/R9MiezE.jpg' 
+            title='Testing 7'
+        />
     </ScrollView>
   )
 }
