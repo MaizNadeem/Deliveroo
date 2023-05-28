@@ -1,5 +1,5 @@
 import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'react-native'
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native'
@@ -15,17 +15,10 @@ import FeaturedRow from '../components/FeaturedRow';
 
 import useFirestoreData from '../hooks/UseFirestoreData';
 
-const HomeScreen = () => {
+const Dashboard = () => {
 
     // Naviagation Implementation
     const navigation = useNavigation()
-
-    useLayoutEffect(() => {
-        navigation.setOptions({
-            headerShown: false,
-        })
-    }, [])
-
 
     // Firestore Data Fetching
     const data = useFirestoreData('Test');
@@ -36,7 +29,7 @@ const HomeScreen = () => {
     if (!data || data.length === 0) {
         return (
           <SafeAreaView style={{flex: 1}}>
-            <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="gray" />
+            <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="#00D1BC" />
           </SafeAreaView>
         );
     }
@@ -49,17 +42,17 @@ const HomeScreen = () => {
                 {/* Top View */}
                 <View className='flex-row pb-3 items-center mx-4 space-x-3'>
                     <Image
-                        source={{uri: 'https://i.imgur.com/29Rvtdt.png'}}
+                        source={{uri: 'https://firebasestorage.googleapis.com/v0/b/deliveroo-2-c6550.appspot.com/o/Delivery%20Guy.png?alt=media&token=3111e8f6-a485-43db-8353-4a534e643fd7'}}
                         className='h-7 w-7 bg-gray-300 p-4 rounded-full'
                     />
                     <View className='flex-1'>
                         <Text className='font-bold text-gray-400 text-xs'>Deliver Now!</Text>
                         <View className='flex-row items-center'>
                             <Text className='font-bold text-lg'>Current Location</Text>
-                            <ChevronDownIcon style={{ marginLeft: 4 }} size={20} color='#00CCBB' />
+                            <ChevronDownIcon style={{ marginLeft: 4 }} size={20} color='#00D1BC' />
                         </View>
                     </View>
-                    <UserCircleIcon size={35} color='#00CCBB' />
+                    <UserCircleIcon size={35} color='#00D1BC'/>
                 </View>
 
                 {/* Search */}
@@ -71,7 +64,7 @@ const HomeScreen = () => {
                             keyboardType='default'
                         />
                     </View>
-                    <AdjustmentsVerticalIcon size={35} color='#00CCBB' />
+                    <AdjustmentsVerticalIcon size={35} color='#00D1BC' />
                 </View>
             </View>
 
@@ -108,4 +101,4 @@ const HomeScreen = () => {
     )
 }
 
-export default HomeScreen
+export default Dashboard

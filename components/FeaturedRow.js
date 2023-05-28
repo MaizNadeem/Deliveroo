@@ -8,7 +8,7 @@ const FeaturedRow = ({id, title, description}) => {
         <View>
             <View className='mt-4 flex-row items-center justify-between px-4'>
                 <Text className='font-bold text-lg'>{title}</Text>
-                <ArrowRightIcon color='#00CCBB' />
+                <ArrowRightIcon color='#00D1BC' />
             </View>
             <Text className='text-xs text-gray-500 px-4'>{description}</Text>
             <ScrollView 
@@ -22,7 +22,7 @@ const FeaturedRow = ({id, title, description}) => {
                 {/* Restaurant Cards */}
                 <RestaurantCard
                     id={1}
-                    imgUrl='https://i.imgur.com/R9MiezE.jpg'
+                    imgUrl='https://firebasestorage.googleapis.com/v0/b/deliveroo-2-c6550.appspot.com/o/Sushi.jpg?alt=media&token=1000358b-f2c9-40cf-a8b9-6fb804c0eb90'
                     title='Yo! Sushi'
                     rating={4.5}
                     genre='Japanese'
