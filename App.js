@@ -17,16 +17,6 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  const [loaded] = useFonts({
-    PoppinsBold: require('./assets/fonts/Poppins-Bold.ttf'),
-    PoppinsSemiBold: require('./assets/fonts/Poppins-SemiBold.ttf'),
-    PoppinsMedium: require('./assets/fonts/Poppins-Medium.ttf'),
-    PoppinsRegular: require('./assets/fonts/Poppins-Regular.ttf'),
-    PoppinsLight: require('./assets/fonts/Poppins-Light.ttf'),
-  });
-
-  if (!loaded) return null;
-
   return (
     <SafeAreaProvider>
       <Provider theme={theme} >

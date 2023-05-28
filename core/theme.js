@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'react-native-paper'
+import { DefaultTheme } from 'react-native-paper';
 
 export const theme = {
   ...DefaultTheme,
@@ -25,14 +25,6 @@ export const SIZES = {
   medium: 16,
   large: 18,
   extraLarge: 24,
-};
-
-export const FONTS = {
-  bold: "PoppinsBold",
-  semiBold: "PoppinsSemiBold",
-  medium: "PoppinsMedium",
-  regular: "PoppinsRegular",
-  light: "PoppinsLight",
 };
 
 export const SHADOWS = {

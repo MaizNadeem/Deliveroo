@@ -9,7 +9,7 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Deliveroo!</Header>
+      <Header>On Board...</Header>
       <Paragraph>
         Delicious food, delivered fast!
       </Paragraph>
@@ -17,13 +17,13 @@ export default function StartScreen({ navigation }) {
         mode="contained"
         onPress={() => navigation.navigate('LoginScreen')}
       >
-        Login
+        LOGIN
       </Button>
       <Button
         mode="outlined"
         onPress={() => navigation.navigate('RegisterScreen')}
       >
-        Sign Up
+        SIGN UP
       </Button>
     </Background>
   )

@@ -1,5 +1,5 @@
 import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native'
@@ -21,12 +21,12 @@ const Dashboard = () => {
     const navigation = useNavigation()
 
     // Firestore Data Fetching
-    const data = useFirestoreData('Test');
-
-    console.log(data)
+    const restaurants = useFirestoreData('Restaurant')
+    const categories = useFirestoreData('Categories')
+    const featured = useFirestoreData('Featured')
 
     // If not loaded, return loading indicator
-    if (!data || data.length === 0) {
+    if ( restaurants.length === 0 || categories.length === 0 || featured.length === 0 ) {
         return (
           <SafeAreaView style={{flex: 1}}>
             <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="#00D1BC" />
@@ -37,10 +37,10 @@ const Dashboard = () => {
     return (
         <SafeAreaView>
             <StatusBar backgroundColor="white" barStyle="dark-content" />
-            <View className='bg-white pt-4'>
+            <View className='bg-white pt-5'>
 
                 {/* Top View */}
-                <View className='flex-row pb-3 items-center mx-4 space-x-3'>
+                <View className='flex-row items-center mx-4 space-x-3'>
                     <Image
                         source={{uri: 'https://firebasestorage.googleapis.com/v0/b/deliveroo-2-c6550.appspot.com/o/Delivery%20Guy.png?alt=media&token=3111e8f6-a485-43db-8353-4a534e643fd7'}}
                         className='h-7 w-7 bg-gray-300 p-4 rounded-full'
@@ -56,7 +56,7 @@ const Dashboard = () => {
                 </View>
 
                 {/* Search */}
-                <View className='flex-row items-center space-x-2 pb-2 mx-4'>
+                <View className='flex-row items-center space-x-2 pb-2 mx-4 mt-2'>
                     <View className='flex-row flex-1 space-x-2 bg-gray-200 p-3 items-center rounded-md'>
                         <MagnifyingGlassIcon size={20} color='gray' />
                         <TextInput 
@@ -69,31 +69,22 @@ const Dashboard = () => {
             </View>
 
             {/* Body */}
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 
                 {/* Categories */}
-                <Categories />
+                <Categories categories={categories} />
 
                 {/* Featured Rows */}
 
-                {/* Featured */}
+                {featured.map((item) => (
                 <FeaturedRow
-                    id='1'
-                    title='Featured'
-                    description='Paid placements from our partners.'
+                    key={item.id}
+                    id={item.id}
+                    title={item.title}
+                    description={item.description}
+                    data={item.restaurant}
                 />
-                {/* Tasty Discounts */}
-                <FeaturedRow 
-                    id='2'
-                    title='Tasty Discounts'
-                    description="Everyone's been enjoying these juicy discounts!"
-                />
-                {/* Offers near you */}
-                <FeaturedRow 
-                    id='3'
-                    title='Offers near you'
-                    description='Why not support your local restaurant tonight!'
-                />
+                ))}
 
             </ScrollView>
 
