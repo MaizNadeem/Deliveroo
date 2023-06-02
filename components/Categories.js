@@ -6,8 +6,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 const Categories = ({ categories }) => {
 
     return (
-        <View className='ml-4'>
+        
             <FlatList
+                className='mt-2'
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 data={categories}
@@ -15,9 +16,9 @@ const Categories = ({ categories }) => {
                 renderItem={({ item }) => (
                     <CategoryCard imgUrl={item.image} title={item.name} />
                 )}
+                ListHeaderComponent={<View className="ml-4" />}
                 ListFooterComponent={<View className="mr-4" />}
             />
-        </View>
     )
 }
 

@@ -2,7 +2,6 @@ import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'rea
 import React, { useEffect, useState } from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native'
 import {
     UserCircleIcon,
     ChevronDownIcon,
@@ -16,9 +15,6 @@ import FeaturedRow from '../components/FeaturedRow';
 import useFirestoreData from '../hooks/UseFirestoreData';
 
 const Dashboard = () => {
-
-    // Naviagation Implementation
-    const navigation = useNavigation()
 
     // Firestore Data Fetching
     const restaurants = useFirestoreData('Restaurant')
@@ -85,6 +81,8 @@ const Dashboard = () => {
                     data={item.restaurant}
                 />
                 ))}
+
+                <View className="p-10 m-10"></View>
 
             </ScrollView>
 
