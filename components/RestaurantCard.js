@@ -57,6 +57,13 @@ const RestaurantCard = ({
 
     return (
         <TouchableOpacity className='bg-white mr-3 shadow rounded-lg'
+            style={{
+                shadowColor: '#000',
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.25,
+                shadowRadius: 4,
+                elevation: 2,
+            }}
             onPress={() => {
                 fetchDishes()
             }}

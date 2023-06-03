@@ -9,8 +9,8 @@ module.exports = {
   // ...
   theme: {
     extend: {
-        elevation: {
-            'shadow-android': '5',
+        scale: {
+            '200': '2.5',
         },
     },
   },

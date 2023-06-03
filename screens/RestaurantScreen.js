@@ -25,7 +25,7 @@ const RestaurantScreen = () => {
         address,
         short_description,
         dishesArray,
-        geopoint,
+        geopointObject,
     } = route.params;
 
     useEffect(() => {
@@ -41,8 +41,9 @@ const RestaurantScreen = () => {
             address,
             short_description,
             dishesArray,
-            geopoint,
+            geopointObject,
         }))
+
     }, []);
 
     return (
