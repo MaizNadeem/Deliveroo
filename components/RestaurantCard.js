@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { StarIcon } from 'react-native-heroicons/solid'
 import { MapPinIcon } from 'react-native-heroicons/outline'
@@ -18,10 +18,29 @@ const RestaurantCard = ({
 }) => {
 
     const navigation = useNavigation()
+    const geopointObject = { ...geopoint }
 
-    return (
-        <TouchableOpacity className='bg-white mr-3 shadow rounded-lg'
-            onPress={() => {
+    const fetchDishes = () => {
+
+        const dishPromises = dishes.map((dishRef) => {
+            return dishRef.get()
+                .then((dishSnapshot) => {
+                    if (dishSnapshot.exists) {
+                        return dishSnapshot.data();
+                    } else {
+                        console.log('Document does not exist');
+                        return null;
+                    }
+                })
+                .catch((error) => {
+                    console.log('Error getting document:', error);
+                    return null;
+                });
+        });
+
+        Promise.all(dishPromises)
+            .then((dishDataArray) => {
+                // Navigate to RestaurantScreen with the fetched dishes
                 navigation.navigate("RestaurantScreen", {
                     id,
                     imgUrl,
@@ -30,9 +49,16 @@ const RestaurantCard = ({
                     genre,
                     address,
                     short_description,
-                    dishes,
-                    geopoint,
-                })
+                    dishesArray: dishDataArray,
+                    geopointObject,
+                });
+            });
+    }
+
+    return (
+        <TouchableOpacity className='bg-white mr-3 shadow rounded-lg'
+            onPress={() => {
+                fetchDishes()
             }}
         >
             <Image 
