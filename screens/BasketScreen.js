@@ -1,19 +1,18 @@
-import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 import { useNavigation } from '@react-navigation/native'
-import { useDispatch, useSelector } from 'react-redux'
-import { selectRestaurants } from '../features/restaurantSlice'
-import { removeFromBasket, selectBasketItems, addToBasket } from '../features/basketSlice'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { XCircleIcon } from 'react-native-heroicons/solid'
-import { StatusBar } from 'expo-status-bar'
 import Currency from 'react-currency-formatter'
-import { selectBasketTotal } from '../features/basketSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectRestaurant } from '../features/restaurantSlice'
+import { removeFromBasket, selectBasketItems, addToBasket, selectBasketTotal } from '../features/basketSlice'
 
 const BasketScreen = () => {
 
     const navigation = useNavigation()
-    const restaurant = useSelector(selectRestaurants)
+    const restaurant = useSelector(selectRestaurant)
     const items = useSelector(selectBasketItems)
     const basketTotal = useSelector(selectBasketTotal)
     const dispatch = useDispatch()
@@ -38,9 +37,9 @@ const BasketScreen = () => {
                 </View>
                 <TouchableOpacity
                     onPress={navigation.goBack}
-                    className="rounded-full bg-gray-100 absolute top-3 right-5"
+                    className="rounded-full bg-gray-100 absolute top-6 right-6"
                 >
-                    <XCircleIcon color="#00D1BC" size={50} />
+                    <XCircleIcon color="#00D1BC" size={35} />
                 </TouchableOpacity>
                 <View className="flex-row items-center space-x-4 px-4 py-3 bg-white my-5">
                     <Image 
@@ -100,7 +99,10 @@ const BasketScreen = () => {
                             <Currency quantity={basketTotal + 5.99} currency='USD'/>
                         </Text>
                     </View>
-                    <TouchableOpacity className="rounded-lg bg-[#00D1BC] p-4">
+                    <TouchableOpacity 
+                        className="rounded-lg bg-[#00D1BC] p-4"
+                        onPress={() => navigation.navigate("PreparingOrderScreen")}
+                    >
                         <Text className="text-center text-white text-lg font-bold">Place Order</Text>
                     </TouchableOpacity>
                 </View>

@@ -5,14 +5,14 @@ export const theme = {
   colors: {
     ...DefaultTheme.colors,
     text: '#000000',
-    primary: '#00D1BC',
+    primary: '#00B8C0',
     secondary: '#414757',
     error: '#f13a59',
   },
 }
 
 export const COLORS = {
-  primary: "#001F2D",
+  primary: "#00B8C0",
   secondary: "#4D626C",
   white: "#FFF",
   gray: "#74858C",

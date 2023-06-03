@@ -8,7 +8,11 @@ module.exports = {
   ],
   // ...
   theme: {
-    extend: {},
+    extend: {
+        elevation: {
+            'shadow-android': '5',
+        },
+    },
   },
   plugins: [],
 }

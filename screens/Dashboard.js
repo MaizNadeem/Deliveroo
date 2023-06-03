@@ -25,7 +25,7 @@ const Dashboard = () => {
     if ( restaurants.length === 0 || categories.length === 0 || featured.length === 0 ) {
         return (
           <SafeAreaView style={{flex: 1}}>
-            <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="#00D1BC" />
+            <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="#00B8C0" />
           </SafeAreaView>
         );
     }
@@ -45,10 +45,10 @@ const Dashboard = () => {
                         <Text className='font-bold text-gray-400 text-xs'>Deliver Now!</Text>
                         <View className='flex-row items-center'>
                             <Text className='font-bold text-lg'>Current Location</Text>
-                            <ChevronDownIcon style={{ marginLeft: 4 }} size={20} color='#00D1BC' />
+                            <ChevronDownIcon style={{ marginLeft: 4 }} size={20} color='#00B8C0' />
                         </View>
                     </View>
-                    <UserCircleIcon size={35} color='#00D1BC'/>
+                    <UserCircleIcon size={35} color='#00B8C0'/>
                 </View>
 
                 {/* Search */}
@@ -60,7 +60,7 @@ const Dashboard = () => {
                             keyboardType='default'
                         />
                     </View>
-                    <AdjustmentsVerticalIcon size={35} color='#00D1BC' />
+                    <AdjustmentsVerticalIcon size={35} color='#00B8C0' />
                 </View>
             </View>
 

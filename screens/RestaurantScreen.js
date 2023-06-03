@@ -60,7 +60,7 @@ const RestaurantScreen = () => {
                             className="absolute top-14 left-5 p-2 bg-gray-100 rounded-full"
                             onPress={()=>navigation.goBack()}
                         >
-                            <ArrowLeftIcon size={20} color="#00D1BC"/> 
+                            <ArrowLeftIcon size={20} color="#00B8C0"/> 
                         </TouchableOpacity> 
                     </View>
                     <View className="bg-white">
@@ -85,7 +85,7 @@ const RestaurantScreen = () => {
                     <TouchableOpacity className="flex-row flex-1 bg-white items-center space-x-1 p-4 border-y border-gray-300">
                         <QuestionMarkCircleIcon color="gray" opacity={0.6} size={20}/>
                         <Text className="pl-2 flex-1 text-md font-bold">Have a food allergy?</Text>
-                        <ChevronRightIcon color="#00D1BC"/>
+                        <ChevronRightIcon color="#00B8C0"/>
                     </TouchableOpacity>
                     <View>
                         <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
@@ -106,7 +106,7 @@ const RestaurantScreen = () => {
                                 />
                             ))
                         ) : (
-                            <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="#00D1BC" />
+                            <ActivityIndicator style={{flex: 1, justifyContent: 'center', alignItems: 'center'}} size="large" color="#00B8C0" />
                         )}
                     </View>
                 </ScrollView>
