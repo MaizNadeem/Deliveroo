@@ -48,7 +48,6 @@ const Dashboard = () => {
                             <ChevronDownIcon style={{ marginLeft: 4 }} size={20} color='#00B8C0' />
                         </View>
                     </View>
-                    <UserCircleIcon size={35} color='#00B8C0'/>
                 </View>
 
                 {/* Search */}

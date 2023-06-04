@@ -34,7 +34,7 @@ const BasketScreen = () => {
                     source={require("../assets/Basket.png")}
                     className="h-20 w-20"
                 />
-                <Text className="text-lg font-bold text-gray-400 p-4">Looks empty in here...</Text>
+                <Text className="text-lg text-gray-400 p-4">Looks empty in here...</Text>
                 <TouchableOpacity 
                         className="rounded-lg bg-[#00B8C0] px-5 py-2"
                         onPress={() => navigation.navigate("Dashboard")}
