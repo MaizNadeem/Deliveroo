@@ -18,6 +18,8 @@ import {
   DeliveryScreen,
 } from './screens'
 
+import AddFirestoreData from './firebase/AddFirestoreData';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -28,7 +30,7 @@ export default function App() {
         <NavigationContainer>
             <ReduxProvider store={store}>
               <Stack.Navigator 
-                initialRouteName="StartScreen" 
+                initialRouteName="AddFirestoreData" 
                 screenOptions={{ headerShown: false, }} >
                     <Stack.Screen name="StartScreen" component={StartScreen} />
                     <Stack.Screen name="LoginScreen" component={LoginScreen} />
@@ -39,6 +41,7 @@ export default function App() {
                     <Stack.Screen name="PreparingOrderScreen" component={PreparingOrderScreen} />
                     <Stack.Screen name='BasketScreen' component={BasketScreen} />
                     <Stack.Screen name='DeliveryScreen' component={DeliveryScreen} />
+                    <Stack.Screen name='AddFirestoreData' component={AddFirestoreData} />
               </Stack.Navigator>
             </ReduxProvider>
         </NavigationContainer>

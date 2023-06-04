@@ -63,19 +63,17 @@ const BasketScreen = () => {
                             <Text className="text-gray-600">
                                 <Currency quantity={items[0]?.price} currency='USD'/>
                             </Text>
-                            <TouchableOpacity className="py-2 pl-2">
-                                <Text
-                                    className="text-[#00B8C0] text-xs text-center mb-3"
-                                    onPress={() => dispatch(addToBasket(items[0]))}
-                                >
-                                    Add
-                                </Text>
-                                <Text
-                                    className="text-[#00B8C0] text-xs text-center"
-                                    onPress={() => dispatch(removeFromBasket({ id: key }))}
-                                >
-                                    Remove
-                                </Text>
+                            <TouchableOpacity
+                                className="py-2 pl-2"
+                                onPress={() => dispatch(addToBasket(items[0]))}
+                            >
+                                <Text className="text-[#00B8C0] text-xs text-center">Add</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                                className="py-2 pl-2"
+                                onPress={() => dispatch(removeFromBasket({ id: key }))}
+                            >
+                                <Text className="text-[#00B8C0] text-xs text-center">Remove</Text>
                             </TouchableOpacity>
                         </View>
                     ))}

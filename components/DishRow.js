@@ -38,7 +38,7 @@ const DishRow = ({id, name, description, price, image}) => {
                 <View>
                     <Image
                         source={{ uri: image }}
-                        className="h-20 w-20 bg-gray-300 p-4"
+                        className="h-20 w-20 bg-gray-300 p-4 rounded-md"
                     />
                 </View>
             </View>
