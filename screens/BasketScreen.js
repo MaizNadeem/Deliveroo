@@ -26,6 +26,24 @@ const BasketScreen = () => {
         }, {})
         setGroupedItemsInBasket(groupedItems)
     }, [items])
+
+    if (items.length == 0) {
+        return (
+            <SafeAreaView className="flex-1 items-center justify-center">
+                <Image 
+                    source={require("../assets/Basket.png")}
+                    className="h-20 w-20"
+                />
+                <Text className="text-lg font-bold text-gray-400 p-4">Looks empty in here...</Text>
+                <TouchableOpacity 
+                        className="rounded-lg bg-[#00B8C0] px-5 py-2"
+                        onPress={() => navigation.navigate("Dashboard")}
+                    >
+                        <Text className="text-center text-white text-lg font-bold">Order Now</Text>
+                </TouchableOpacity>
+            </SafeAreaView>
+        )
+    }
     
     return (
         <SafeAreaView className="flex-1 bg-white">
