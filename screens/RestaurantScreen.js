@@ -5,12 +5,17 @@ import { ArrowLeftIcon, StarIcon } from 'react-native-heroicons/solid';
 import { ChevronRightIcon, MapPinIcon, QuestionMarkCircleIcon } from 'react-native-heroicons/outline';
 import BasketIcon from '../components/BasketIcon';
 import DishRow from '../components/DishRow';
-import { useDispatch } from 'react-redux';
+import ConfirmationModal from '../components/ConfirmationModal'
+import { useDispatch, useSelector } from 'react-redux';
 import { setRestaurant } from '../features/restaurantSlice';
+import { clearBasket, selectBasketItems } from '../features/basketSlice';
 
 const RestaurantScreen = () => {
 
     const [dishes, setDishes] = useState(null) 
+    const [showConfirmation, setShowConfirmation] = useState(false);
+
+    const basketItems = useSelector(selectBasketItems)
 
     const navigation = useNavigation()
     const route = useRoute();
@@ -29,27 +34,85 @@ const RestaurantScreen = () => {
     } = route.params;
 
     useEffect(() => {
-
-        setDishes(dishesArray)
-
-        dispatch(setRestaurant({
-            id,
-            imgUrl,
-            title,
-            rating,
-            genre,
-            address,
-            short_description,
-            dishesArray,
-            geopointObject,
-        }))
-
+        setDishes(dishesArray);
     }, []);
+      
+    const handleAddToCart = () => {
+        if (basketItems.length === 0) {
+          // Basket is empty, so set the restaurant
+        dispatch (
+            setRestaurant({
+              id,
+              imgUrl,
+              title,
+              rating,
+              genre,
+              address,
+              short_description,
+              dishesArray,
+              geopointObject,
+            })
+        );
+            return true;
+        }
+
+        else {
+            // Check if any dishes from the restaurant are in the basket
+            const isDishInBasket = basketItems.some((item) => {
+                return dishesArray.some((dish) => dish.id === item.id);
+            });
+            if (!isDishInBasket) {
+                // Show the confirmation modal
+                setShowConfirmation(true);
+            } else {
+                return true;
+            }
+        }
+    };
+      
+    const handleConfirm = () => {
+        // Handle the confirmation logic here
+        // ...
+      
+        dispatch(clearBasket());
+      
+        // Dispatch setRestaurant after confirmation
+        dispatch(
+            setRestaurant({
+                id,
+                imgUrl,
+                title,
+                rating,
+                genre,
+                address,
+                short_description,
+                dishesArray,
+                geopointObject,
+            })
+        );
+      
+        // Close the confirmation modal
+        setShowConfirmation(false);
+        return true;
+    };
+      
+    const handleCancel = () => {
+        // Close the confirmation modal
+        setShowConfirmation(false);
+        return false;
+    };
+      
 
     return (
         <View className="flex-1">
             <StatusBar translucent backgroundColor="rgba(0, 0, 0, 0.5)" />
             <>
+                <ConfirmationModal
+                    isVisible={showConfirmation}
+                    message="Are you sure you want to discard your current selection?"
+                    onConfirm={handleConfirm}
+                    onCancel={handleCancel}
+                />
                 <BasketIcon />
                 <ScrollView>
                     <View className="relative">
@@ -104,6 +167,7 @@ const RestaurantScreen = () => {
                                     description={dish['short description']}
                                     price={dish.price}
                                     image={dish.image}
+                                    onAddToCart={handleAddToCart}
                                 />
                             ))
                         ) : (

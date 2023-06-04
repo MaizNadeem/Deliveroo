@@ -30,7 +30,7 @@ export default function App() {
         <NavigationContainer>
             <ReduxProvider store={store}>
               <Stack.Navigator 
-                initialRouteName="AddFirestoreData" 
+                initialRouteName="StartScreen" 
                 screenOptions={{ headerShown: false, }} >
                     <Stack.Screen name="StartScreen" component={StartScreen} />
                     <Stack.Screen name="LoginScreen" component={LoginScreen} />

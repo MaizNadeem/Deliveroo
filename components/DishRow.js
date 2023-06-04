@@ -3,17 +3,18 @@ import React, { useState } from 'react'
 import Currency from 'react-currency-formatter'
 import { MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToBasket, removeFromBasket, selectBasketItems, selectBasketItemsWithID } from '../features/basketSlice'
+import { addToBasket, removeFromBasket, selectBasketItemsWithID } from '../features/basketSlice'
 
 
-const DishRow = ({id, name, description, price, image}) => {
+const DishRow = ({id, name, description, price, image, onAddToCart}) => {
 
     const [isPressed, setIsPressed] = useState(false)
     const items = useSelector(state => selectBasketItemsWithID(state, id))
     const dispatch = useDispatch()
 
     const addItemToBasket = () => {
-        dispatch(addToBasket({ id, name, description, price, image }))
+        if (onAddToCart())
+            dispatch(addToBasket({ id, name, description, price, image }))
     }
     
     const removeItemFromBasket = () => {

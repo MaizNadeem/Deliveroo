@@ -5,13 +5,17 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Animatable from 'react-native-animatable'
 import * as Progress from 'react-native-progress'
 import { useNavigation } from '@react-navigation/core';
+import { useDispatch } from 'react-redux';
+import { clearBasket } from '../features/basketSlice';
 
 const PreparingOrderScreen = () => {
 
     const navigation = useNavigation()
+    const dispatch = useDispatch()
 
     useEffect(()=>{
         setTimeout(() => {
+            dispatch(clearBasket())
             navigation.navigate("DeliveryScreen")
         }, 4000)
     }, [])
