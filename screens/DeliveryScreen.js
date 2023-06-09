@@ -8,7 +8,6 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { PhoneIcon, XMarkIcon } from 'react-native-heroicons/solid'
 import * as Progress from 'react-native-progress'
 import MapView, { Marker, Polyline } from 'react-native-maps'
-import { DirectionsService } from 'react-native-maps-directions';
 
 const DeliveryScreen = () => {
 
