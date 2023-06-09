@@ -11,6 +11,7 @@ import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
+import { auth } from '../firebase/config'
 
 export default function RegisterScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' })
@@ -27,6 +28,14 @@ export default function RegisterScreen({ navigation }) {
       setPassword({ ...password, error: passwordError })
       return
     }
+    auth
+        .createUserWithEmailAndPassword(email.value, password.value)
+        .then(userCredentials => {
+            const user = userCredentials.user
+            console.log(user.email)
+        })
+        .catch(error => alert(error.message))
+
     navigation.reset({
       index: 0,
       routes: [{ name: 'DashboardTab' }],

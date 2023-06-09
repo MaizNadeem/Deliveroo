@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TouchableOpacity, StyleSheet, View } from 'react-native'
 import { Text } from 'react-native-paper'
 import Background from '../components/AuthComponents/Background'
@@ -10,10 +10,24 @@ import BackButton from '../components/AuthComponents/BackButton'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
+import { auth } from '../firebase/config'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
+
+  useEffect(()=>{
+    const unsubscribe = auth.onAuthStateChanged((user => {
+        if (user) {
+            navigation.reset({
+                index: 0,
+                routes: [{ name: 'DashboardTab' }],
+            })
+        }
+    }))
+
+    return unsubscribe
+  },[])
 
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value)
@@ -23,10 +37,15 @@ export default function LoginScreen({ navigation }) {
       setPassword({ ...password, error: passwordError })
       return
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'DashboardTab' }],
-    })
+
+    auth
+        .signInWithEmailAndPassword(email.value, password.value)
+        .then(userCredentials => {
+            const user = userCredentials.user
+            console.log(user.email)
+        })
+        .catch(error => alert(error.message))
+
   }
 
   return (

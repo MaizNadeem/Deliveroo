@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Deliveroo-2.0",
-    "slug": "Deliveroo-2.0",
+    "slug": "deliveroo-2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "deliveroo.maiz"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b409764c-993f-40df-a553-20a72d2f93f2"
+      }
+    },
+    "owner": "maiz-nadeem"
   }
 }

@@ -1,13 +1,12 @@
-import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'react-native';
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
-    UserCircleIcon,
     ChevronDownIcon,
     MagnifyingGlassIcon,
     AdjustmentsVerticalIcon,
-} from 'react-native-heroicons/outline'
+} from 'react-native-heroicons/outline';
 
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';

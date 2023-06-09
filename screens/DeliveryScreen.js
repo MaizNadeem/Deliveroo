@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, BackHandler, Image } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/core'
 import { useSelector } from 'react-redux'
 import { selectRestaurant } from '../features/restaurantSlice'
@@ -7,24 +7,92 @@ import { StatusBar } from 'expo-status-bar'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { PhoneIcon, XMarkIcon } from 'react-native-heroicons/solid'
 import * as Progress from 'react-native-progress'
-import MapView, { Marker } from 'react-native-maps'
+import MapView, { Marker, Polyline } from 'react-native-maps'
+import { DirectionsService } from 'react-native-maps-directions';
 
 const DeliveryScreen = () => {
 
     const navigation = useNavigation()
     const restaurant = useSelector(selectRestaurant)
 
+    const initialRegion = {
+        latitude: 31.401867,
+        longitude: 74.209619,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+    };
+    const markerCoordinate = {
+        latitude: restaurant.geopointObject._lat,
+        longitude: restaurant.geopointObject._long,
+    };
+    const pathCoordinates = [initialRegion, markerCoordinate];
+    const [routeCoordinates, setRouteCoordinates] = useState([]);
+
     useEffect(() => {
         const backHandler = BackHandler.addEventListener(
           'hardwareBackPress',
           handleGoBack
         );
+        fetchDirections();
         return () => backHandler.remove();
     }, []);
+
+    const fetchDirections = async () => {
+        try {
+            const response = await fetch(
+                `https://maps.googleapis.com/maps/api/directions/json?origin=${initialRegion.latitude},${initialRegion.longitude}&destination=${markerCoordinate.latitude},${markerCoordinate.longitude}&key=AIzaSyCVv_Mt6KB-YdfuZFeZYffix8TDGTvVSK8`
+            );
+            const data = await response.json();
+            const polylinePoints = data.routes[0].overview_polyline.points;
+            const decodedPoints = decodePolyline(polylinePoints);
+            setRouteCoordinates(decodedPoints);
+        } catch (error) {
+            console.error('Error fetching directions:', error);
+        }
+    };
 
     const handleGoBack = () => {
         navigation.navigate('Dashboard');
         return true; // Return true to prevent default back button behavior
+    };
+
+    const decodePolyline = (polyline) => {
+        const points = [];
+        let index = 0;
+        const len = polyline.length;
+        let lat = 0;
+        let lng = 0;
+
+        while (index < len) {
+        let b;
+        let shift = 0;
+        let result = 0;
+
+        do {
+            b = polyline.charCodeAt(index++) - 63;
+            result |= (b & 0x1f) << shift;
+            shift += 5;
+        } while (b >= 0x20);
+
+        const dlat = (result & 1) !== 0 ? ~(result >> 1) : result >> 1;
+        lat += dlat;
+
+        shift = 0;
+        result = 0;
+
+        do {
+            b = polyline.charCodeAt(index++) - 63;
+            result |= (b & 0x1f) << shift;
+            shift += 5;
+        } while (b >= 0x20);
+
+        const dlng = (result & 1) !== 0 ? ~(result >> 1) : result >> 1;
+        lng += dlng;
+
+        points.push({ latitude: lat / 1e5, longitude: lng / 1e5 });
+        }
+
+        return points;
     };
 
     return (
@@ -54,26 +122,31 @@ const DeliveryScreen = () => {
             </SafeAreaView>
 
             <MapView
-                initialRegion={{
-                    latitude: restaurant.geopointObject._lat,
-                    longitude: restaurant.geopointObject._long,
-                    latitudeDelta: 0.005,
-                    longitudeDelta: 0.005,
-                }}
-                className="flex-1 -mt-10 z-0"
-                mapType='mutedStandard'
+                initialRegion={initialRegion}
+                style={{ flex: 1 }}
+                mapType="mutedStandard"
             >
+                {routeCoordinates.length > 0 && (
+                <Polyline
+                    coordinates={routeCoordinates}
+                    strokeColor="#00B8C0"
+                    strokeWidth={3}
+                />
+                )}
                 <Marker
-                    coordinate={{
-                        latitude: restaurant.geopointObject._lat,
-                        longitude: restaurant.geopointObject._long,
-                    }}
-                    title={restaurant.title}
-                    description={restaurant.short_description}
-                    identifier="origin"
-                    pinColor='#00B8C0'
+                coordinate={initialRegion}
+                title="Your Location"
+                pinColor="#00B8C0"
+                >
+                </Marker>
+                <Marker
+                coordinate={markerCoordinate}
+                title={restaurant.title}
+                description={restaurant.short_description}
+                pinColor="#00B8C0"
                 />
             </MapView>
+
             <SafeAreaView className="flex-row bg-white items-center space-x-5 h-28">
                 <Image 
                     source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/deliveroo-2-c6550.appspot.com/o/Delivery%20Guy.png?alt=media&token=3111e8f6-a485-43db-8353-4a534e643fd7' }}
@@ -88,7 +161,6 @@ const DeliveryScreen = () => {
                     <Text className="text-[#00B8C0] text-lg mr-5 ml-1 font-bold">Call</Text>
                 </TouchableOpacity>
             </SafeAreaView>
-
 
         </View>
     )
