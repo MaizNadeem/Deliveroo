@@ -1,4 +1,4 @@
-import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'react-native';
+import { View, Image, Text, TextInput, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import React, { useLayoutEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -6,14 +6,18 @@ import {
     ChevronDownIcon,
     MagnifyingGlassIcon,
     AdjustmentsVerticalIcon,
+    Bars3Icon,
 } from 'react-native-heroicons/outline';
 
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 
 import useFirestoreData from '../hooks/UseFirestoreData';
+import { useNavigation } from '@react-navigation/native';
 
 const Dashboard = () => {
+
+    const navigation = useNavigation()
 
     // Firestore Data Fetching
     const restaurants = useFirestoreData('Restaurant')
@@ -36,6 +40,12 @@ const Dashboard = () => {
 
                 {/* Top View */}
                 <View className='flex-row items-center mx-4 space-x-3'>
+                    <TouchableOpacity 
+                        className="rounded-md p-0.5 border-2 border-[#00C8B0] border-solid"
+                        onPress={() => navigation.openDrawer()}
+                    >
+                        <Bars3Icon color='#00C8B0' size={27}/>
+                    </TouchableOpacity>
                     <Image
                         source={{uri: 'https://firebasestorage.googleapis.com/v0/b/deliveroo-2-c6550.appspot.com/o/Delivery%20Guy.png?alt=media&token=3111e8f6-a485-43db-8353-4a534e643fd7'}}
                         className='h-7 w-7 bg-gray-300 p-4 rounded-full'
