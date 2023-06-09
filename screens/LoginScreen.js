@@ -11,6 +11,9 @@ import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { auth } from '../firebase/config'
+import firebase from '../firebase/config'
+
+const db = firebase.firestore()
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
@@ -21,13 +24,29 @@ export default function LoginScreen({ navigation }) {
         if (user) {
             navigation.reset({
                 index: 0,
-                routes: [{ name: 'DashboardTab' }],
+                routes: [{ name: 'AddFirestoreData' }],
             })
         }
     }))
 
     return unsubscribe
   },[])
+
+  useEffect(() => {
+    const updateCurrentScreen = async () => {
+      try {
+        const currentScreen = 'LoginScreen'; // Replace with the name of the current screen
+  
+        await db.collection('Users').doc('1').update({
+          currentScreen: currentScreen,
+        });
+      } catch (error) {
+        console.log('Error updating current screen:', error);
+      }
+    };
+  
+    updateCurrentScreen();
+  }, []);
 
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value)
