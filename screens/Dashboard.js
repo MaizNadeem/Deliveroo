@@ -1,5 +1,5 @@
 import { View, Image, Text, TextInput, ScrollView, ActivityIndicator } from 'react-native';
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {

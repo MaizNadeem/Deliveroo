@@ -1,18 +1,19 @@
 import { theme } from './core/theme';
 import { store } from './store';
-import { View } from 'react-native'; 
 import { Provider as ReduxProvider } from 'react-redux';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
 import {
     HomeIcon,
     ShoppingCartIcon,
     UserCircleIcon,
     BuildingStorefrontIcon,
+    MenuIcon,
 } from 'react-native-heroicons/solid'
 
 import {
@@ -29,10 +30,26 @@ import {
     AllStoresScreen,
 } from './screens';
 
+import SideHeader from './core/SideHeader';
 import AddFirestoreData from './firebase/AddFirestoreData';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+
+function CustomDrawerContent(props) {
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <DrawerItem
+        label="Logout"
+        onPress={() => {
+          // Implement your logout logic here
+        }}
+      />
+    </DrawerContentScrollView>
+  );
+}
 
 export default function App() {
   return (
@@ -95,6 +112,26 @@ export default function App() {
                     <Tab.Screen name="BasketScreen" component={BasketScreen} />
                     <Tab.Screen name="ProfileScreen" component={ProfileScreen} />
                   </Tab.Navigator>
+                )}
+              </Stack.Screen>
+              <Stack.Screen name="DashboardSide" options={{ headerShown: false }}>
+                {() => (
+                    <Drawer.Navigator
+                        initialRouteName="Dashboard"
+                        drawerContent={CustomDrawerContent}
+                        screenOptions={{
+                            header: ({ navigation }) => (
+                              <SideHeader navigation={navigation} />
+                            ),
+                            drawerIcon: ({ focused }) => (
+                              <TouchableOpacity onPress={() => navigation.openDrawer()}>
+                                <MenuIcon size={24} color={focused ? '#00B8C0' : '#999999'} />
+                              </TouchableOpacity>
+                            ),
+                        }}
+                    >
+                        <Drawer.Screen name="Dashboard" component={Dashboard} />
+                    </Drawer.Navigator>
                 )}
               </Stack.Screen>
             </Stack.Navigator>
