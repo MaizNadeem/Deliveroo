@@ -1,31 +1,29 @@
 <div align="center">
 
-  <img src="https://user-images.githubusercontent.com/99184393/196014260-dfc68631-1abb-4635-ac6d-787ad0805dcd.png" alt="logo" width="200" height="auto" />
+<img src="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/assets/logo.png" alt="logo" width="200" height="auto" />
   
-  # Deliveroo Clone with REACT NATIVE!
-  
-  <p>
-Deliveroo Clone with REACT NATIVE! (Navigation, Redux, Tailwind CSS & Sanity.io)
-  </p>
+# Deliveroo Clone with React Native!
+
+<p>Deliveroo Clone with React Native Expo (React Navigation, Redux, Tailwind CSS & Firebase)</p>
   
   
 <!-- Badges -->
 
-<a href="#" target="_blank">![](https://img.shields.io/badge/Ios%2FAndroid-Up-green)</a>
+<a href="#" target="_blank">![](https://img.shields.io/badge/iOS%2FAdnroid-Yes-green)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
-![](https://img.shields.io/github/forks/SashenJayathilaka/Deliveroo-Clone.svg)
-![](https://img.shields.io/github/stars/SashenJayathilaka/Deliveroo-Clone.svg)
-![](https://img.shields.io/github/issues/SashenJayathilaka/Deliveroo-Clone)
-![](https://img.shields.io/github/last-commit/SashenJayathilaka/Deliveroo-Clone)
+![](https://img.shields.io/github/forks/MaizNadeem/Deliveroo-2.0.svg)
+![](https://img.shields.io/github/stars/MaizNadeem/Deliveroo-2.0.svg)
+![](https://img.shields.io/github/issues/MaizNadeem/Deliveroo-2.0)
+![](https://img.shields.io/github/last-commit/MaizNadeem/Deliveroo-2.0)
 
 <h4>
     <a href="">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Deliveroo-Clone/blob/master/README.md">Documentation</a>
+    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/README.md">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Deliveroo-Clone/issues">Report Bug</a>
+    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/SashenJayathilaka/Deliveroo-Clone/issues">Request Feature</a>
+    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Request Feature</a>
   </h4>
 </div>
 
