@@ -64,27 +64,6 @@ The "Deliveroo" app aims to provide a seamless food delivery experience to users
 
 7. Delivery Screen: Displays the status and progress of the user's ongoing food delivery, including estimated arrival time and tracking information.
 
-**Technologies Used:**
-The "Deliveroo" app incorporates the following technologies into its development stack:
-
-1. React Native: A popular JavaScript framework for building native mobile applications.
-
-2. Expo: A set of tools and services that simplifies the development of React Native applications.
-
-3. Firebase: A comprehensive platform for building mobile and web applications, used for authentication, data storage, and file storage.
-
-4. Node.js: A server-side JavaScript runtime that powers the backend server of the app, handling authentication, data retrieval, and server-side operations.
-
-5. GraphQL: A query language and runtime that enables efficient communication between the client and server, reducing unnecessary data transfers and improving performance.
-
-6. React Redux: A state management library that helps manage the app's global state and facilitates data flow between components.
-
-7. React Navigation: A routing and navigation library for React Native that allows seamless navigation between different screens.
-
-8. Tailwind CSS (Nativewind): A utility-first CSS framework used for styling the app's user interface.
-
-By leveraging these technologies, the "Deliveroo" app provides a feature-rich and user-friendly food delivery experience. The combination of React Native, Expo, Firebase, Node.js, GraphQL, React Redux, React Navigation, and Tailwind CSS contributes to the app's robustness, performance, and efficient data communication.
-
 <!-- Screenshots -->
 
 ### :camera: Screenshots
@@ -131,6 +110,27 @@ By leveraging these technologies, the "Deliveroo" app provides a feature-rich an
         <li>Node JS</li>
     </ul>
 </details>
+
+**Technologies Used:**
+The "Deliveroo" app incorporates the following technologies into its development stack:
+
+1. React Native: A popular JavaScript framework for building native mobile applications.
+
+2. Expo: A set of tools and services that simplifies the development of React Native applications.
+
+3. Firebase: A comprehensive platform for building mobile and web applications, used for authentication, data storage, and file storage.
+
+4. Node.js: A server-side JavaScript runtime that powers the backend server of the app, handling authentication, data retrieval, and server-side operations.
+
+5. GraphQL: A query language and runtime that enables efficient communication between the client and server, reducing unnecessary data transfers and improving performance.
+
+6. React Redux: A state management library that helps manage the app's global state and facilitates data flow between components.
+
+7. React Navigation: A routing and navigation library for React Native that allows seamless navigation between different screens.
+
+8. Tailwind CSS (Nativewind): A utility-first CSS framework used for styling the app's user interface.
+
+By leveraging these technologies, the "Deliveroo" app provides a feature-rich and user-friendly food delivery experience. The combination of React Native, Expo, Firebase, Node.js, GraphQL, React Redux, React Navigation, and Tailwind CSS contributes to the app's robustness, performance, and efficient data communication.
 
 <br />
 
