@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
             if (user) {
                 navigation.reset({
                     index: 0,
-                    routes: [{ name: 'Dashboard' }],
+                    routes: [{ name: 'DashboardDrawer' }],
                 })
             }
         }))
@@ -44,7 +44,6 @@ export default function LoginScreen({ navigation }) {
             .signInWithEmailAndPassword(email.value, password.value)
             .then(userCredentials => {
                 const user = userCredentials.user
-                console.log(user.email)
             })
             .catch(error => alert(error.message))
 

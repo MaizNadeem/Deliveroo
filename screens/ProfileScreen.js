@@ -19,12 +19,13 @@ const ProfileScreen = () => {
         
     return (
         <SafeAreaView className="flex-1 justify-center items-center">
-            <Text className="font-bold text-lg mb-2">Email: { auth.currentUser?.email }</Text>
+            <Text className="font-bold text-lg mb-2">Email: </Text>
+            <Text className="text-md mb-4">{ auth.currentUser?.email }</Text>
             <TouchableOpacity 
-                onPress={handleSignOut}
-                className="rounded-lg bg-[#00B8C0] px-10 py-2"
+                className="rounded-lg bg-[#00B8C0] px-5 py-2"
+                onPress={() => navigation.navigate("Dashboard")}
             >
-                <Text className="text-center text-white text-lg font-bold">Sign out</Text>
+                <Text className="text-center text-white text-md font-bold">Sign Out</Text>
             </TouchableOpacity>
         </SafeAreaView>
     )

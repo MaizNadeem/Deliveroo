@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Deliveroo-2.0",
-    "slug": "deliveroo-2",
+    "name": "Deliveroo",
+    "slug": "deliveroo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

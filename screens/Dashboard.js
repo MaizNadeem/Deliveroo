@@ -40,11 +40,10 @@ const Dashboard = () => {
 
                 {/* Top View */}
                 <View className='flex-row items-center mx-4 space-x-3'>
-                    <TouchableOpacity 
-                        className="rounded-md p-0.5 border-2 border-[#00C8B0] border-solid"
+                    <TouchableOpacity
                         onPress={() => navigation.openDrawer()}
                     >
-                        <Bars3Icon color='#00C8B0' size={27}/>
+                        <Bars3Icon color='#00B8C0' size={27}/>
                     </TouchableOpacity>
                     <Image
                         source={{uri: 'https://firebasestorage.googleapis.com/v0/b/deliveroo-2-c6550.appspot.com/o/Delivery%20Guy.png?alt=media&token=3111e8f6-a485-43db-8353-4a534e643fd7'}}

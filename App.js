@@ -1,7 +1,6 @@
 import { theme } from './core/theme';
 import { store } from './store';
-import { useTheme } from 'react-native-paper';
-import { TouchableOpacity, View, Text } from 'react-native';
+import { View } from 'react-native';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -15,7 +14,6 @@ import {
     ShoppingCartIcon,
     UserCircleIcon,
     BuildingStorefrontIcon,
-    Bars3Icon,
 } from 'react-native-heroicons/solid'
 
 import {
@@ -98,7 +96,7 @@ export default function App() {
                             <Stack.Screen name="PreparingOrderScreen" component={PreparingOrderScreen} />
                             <Stack.Screen name="DeliveryScreen" component={DeliveryScreen} />
                             <Stack.Screen name="AddFirestoreData" component={AddFirestoreData} />
-                            <Stack.Screen name="Dashboard" component={DashboardDrawer} />
+                            <Stack.Screen name="DashboardDrawer" component={DashboardDrawer} />
                         </Stack.Navigator>
                     </NavigationContainer>
                 </PaperProvider>
@@ -111,11 +109,11 @@ export default function App() {
 function DashboardDrawer() {
     return (
         <Drawer.Navigator
-            initialRouteName="Dashboard"
+            initialRouteName="DashboardTab"
             drawerContent={(props) => <CustomDrawerContent {...props} />}
         >
             <Drawer.Screen
-                name="Dashboard"
+                name="DashboardTab"
                 component={DashboardTabs}
                 options={{
                 headerShown: false, // Hide the header for this screen
