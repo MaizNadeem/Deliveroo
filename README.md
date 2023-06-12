@@ -86,8 +86,12 @@ The "Deliveroo" app aims to provide a seamless food delivery experience to users
 ![Firebase](https://img.shields.io/badge/Firebase-FFC900?style=for-the-badge&logo=Firebase&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
 ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
 <details>
     <summary>Front-end</summary>
@@ -96,6 +100,13 @@ The "Deliveroo" app aims to provide a seamless food delivery experience to users
         <li>Redux</li>
         <li>React Navigation</li>
         <li>Tailwind CSS</li>
+    </ul>
+</details>
+
+<details>
+    <summary>API</summary>
+    <ul>
+        <li>Google Maps (Cloud API)</li>
     </ul>
 </details>
 
