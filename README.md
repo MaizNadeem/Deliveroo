@@ -45,7 +45,45 @@
 
 ## :star2: About the Project
 
+The "Deliveroo" app is a React Native Expo application for food delivery. It utilizes a variety of technologies to create a comprehensive solution. Here's an overview of the project:
 
+**Project Description:**
+The "Deliveroo" app aims to provide a seamless food delivery experience to users. It offers a range of screens to facilitate different functionalities, including:
+
+1. Splash Screen: The initial screen that appears when the app is launched, providing branding and loading indicators.
+
+2. Login and Signup Screens: These screens enable users to create accounts or authenticate themselves to access personalized features.
+
+3. Dashboard Screen: The main screen of the app where users can browse and search for available restaurants, explore menu items, and place orders.
+
+4. Basket Screen: This screen displays the items added to the user's basket, allowing them to review and modify their order before proceeding to checkout.
+
+5. Profile Screen: Users can manage their personal information, view order history, and customize their preferences on this screen.
+
+6. Restaurant Screen: Provides detailed information about a specific restaurant, including its menu, reviews, and location.
+
+7. Delivery Screen: Displays the status and progress of the user's ongoing food delivery, including estimated arrival time and tracking information.
+
+**Technologies Used:**
+The "Deliveroo" app incorporates the following technologies into its development stack:
+
+1. React Native: A popular JavaScript framework for building native mobile applications.
+
+2. Expo: A set of tools and services that simplifies the development of React Native applications.
+
+3. Firebase: A comprehensive platform for building mobile and web applications, used for authentication, data storage, and file storage.
+
+4. Node.js: A server-side JavaScript runtime that powers the backend server of the app, handling authentication, data retrieval, and server-side operations.
+
+5. GraphQL: A query language and runtime that enables efficient communication between the client and server, reducing unnecessary data transfers and improving performance.
+
+6. React Redux: A state management library that helps manage the app's global state and facilitates data flow between components.
+
+7. React Navigation: A routing and navigation library for React Native that allows seamless navigation between different screens.
+
+8. Tailwind CSS (Nativewind): A utility-first CSS framework used for styling the app's user interface.
+
+By leveraging these technologies, the "Deliveroo" app provides a feature-rich and user-friendly food delivery experience. The combination of React Native, Expo, Firebase, Node.js, GraphQL, React Redux, React Navigation, and Tailwind CSS contributes to the app's robustness, performance, and efficient data communication.
 
 <!-- Screenshots -->
 
@@ -85,6 +123,15 @@
 
 </div>
 
+![React](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFC900?style=for-the-badge&logo=Firebase&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
+![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
 
 <details>
     <summary>Front-end</summary>
@@ -103,6 +150,8 @@
         <li>Firebase Authentication</li>
         <li>Storage Bucket</li>
         <li>Cloud Functions</li>
+        <li>GraphQL</li>
+        <li>Node JS</li>
     </ul>
 </details>
 
@@ -115,10 +164,6 @@
 ### Installation
 
 Install this project with expo using git-cli.
-
-![](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![](https://img.shields.io/badge/Expo-02569B?style=for-the-badge&logo=Expo&logoColor=white)
-![](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 
 <!-- Run Locally -->
 
@@ -145,8 +190,6 @@ Install dependencies
 ```
 
 ### Setup Tailwind CSS
-
-![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ```
 npm install nativewind
