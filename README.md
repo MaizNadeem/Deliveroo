@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/assets/logo.png" alt="logo" width="200" height="auto" />
+<img src="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/assets/logo.png" alt="Deliveroo Logo" width="200" height="200" />
   
 # Deliveroo Clone with React Native!
 
@@ -9,8 +9,8 @@
   
 <!-- Badges -->
 
-<a href="#" target="_blank">![](https://img.shields.io/badge/iOS%2FAdnroid-Yes-green)</a>
-![](https://img.shields.io/badge/Maintained-Yes-indigo)
+<a href="#" target="_blank">![](https://img.shields.io/badge/iOS%2FAndroid-Yes-green)</a>
+![](https://img.shields.io/badge/Maintained-No-orange)
 ![](https://img.shields.io/github/forks/MaizNadeem/Deliveroo-2.0.svg)
 ![](https://img.shields.io/github/stars/MaizNadeem/Deliveroo-2.0.svg)
 ![](https://img.shields.io/github/issues/MaizNadeem/Deliveroo-2.0)
