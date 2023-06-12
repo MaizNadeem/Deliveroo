@@ -15,15 +15,16 @@
 ![](https://img.shields.io/github/issues/MaizNadeem/Deliveroo-2.0)
 ![](https://img.shields.io/github/last-commit/MaizNadeem/Deliveroo-2.0)
 
-    <h4>
-        <a href="https://drive.google.com/file/d/1yGeEmzMSG1cvEjTx2Am3kkB4xIG3apDv/view?usp=drive_link">Demo App (Apk)</a>
-        <span> · </span>
-        <a href="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/README.md">Documentation</a>
-        <span> · </span>
-        <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Report Bug</a>
-        <span> · </span>
-        <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Request Feature</a>
-    </h4>
+<h4>
+    <a href="https://drive.google.com/file/d/1yGeEmzMSG1cvEjTx2Am3kkB4xIG3apDv/view?usp=drive_link">Demo App (Apk)</a>
+    <span> · </span>
+    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/README.md">Documentation</a>
+    <span> · </span>
+    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Report Bug</a>
+    <span> · </span>
+    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Request Feature</a>
+</h4>
+
 </div>
 
 <br>
@@ -82,8 +83,6 @@
 </div>
 
 
-
-
 <details>
     <summary>Front-end</summary>
     <ul>
@@ -111,17 +110,15 @@
 
 ### Installation
 
+Install this project with expo using git-cli.
+
 ![](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-
-Install this project with expo
-
 ![](https://img.shields.io/badge/Expo-02569B?style=for-the-badge&logo=Expo&logoColor=white)
+![](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 
 <!-- Run Locally -->
 
 ### Run Locally
-
-![](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 
 Clone the project
 
