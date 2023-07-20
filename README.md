@@ -1,72 +1,38 @@
-<div align="center">
+![Banner Image](https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/Screenshots/Banner.png)
 
-<img src="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/assets/logo.png" alt="Deliveroo Logo" width="200" height="200" />
-  
-# Deliveroo Clone with React Native!
+# Deliveroo App
 
-<p>Deliveroo Clone with React Native Expo (React Navigation, Redux, Tailwind CSS & Firebase)</p>
+Deliveroo Clone with React Native Expo (React Navigation, Redux, Tailwind CSS & Firebase)
 
-<!-- Badges -->
+## Installation
 
-<a href="#" target="_blank">![](https://img.shields.io/badge/iOS%2FAndroid-Yes-green)</a>
-![](https://img.shields.io/badge/Maintained-No-orange)
-![](https://img.shields.io/github/forks/MaizNadeem/Deliveroo-2.0.svg)
-![](https://img.shields.io/github/stars/MaizNadeem/Deliveroo-2.0.svg)
-![](https://img.shields.io/github/issues/MaizNadeem/Deliveroo-2.0)
-![](https://img.shields.io/github/last-commit/MaizNadeem/Deliveroo-2.0)
+To install the Deliveroo app on your Android device, follow these steps:
 
-<h4>
-    <a href="https://drive.google.com/file/d/1yGeEmzMSG1cvEjTx2Am3kkB4xIG3apDv/view?usp=drive_link">Demo App (Apk)</a>
-    <span> · </span>
-    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/README.md">Documentation</a>
-    <span> · </span>
-    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Report Bug</a>
-    <span> · </span>
-    <a href="https://github.com/MaizNadeem/Deliveroo-2.0/issues">Request Feature</a>
-</h4>
+- Download the APK file from the following link: [Download APK](https://drive.google.com/file/d/1yGeEmzMSG1cvEjTx2Am3kkB4xIG3apDv/view?usp=drive_link)
+- Once the APK is downloaded, open it on your Android device.
+- If prompted, allow the installation of apps from unknown sources in your device settings.
+- Follow the on-screen instructions to install the app.
+- Once the installation is complete, you can open the app and start using the Deliveroo Clone with React Native!
 
-</div>
+Please note that this installation method is for Android devices only.
 
-<br>
-
-<!-- Table of Contents -->
-
-## :notebook_with_decorative_cover: Table of Contents
-
-- [About the Project](#star2-about-the-project)
-    - [Screenshots](#camera-screenshots)
-    - [Technologies](#technologies)
-- [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Run Locally](#run-locally)
-- [Contact](#contact)
-
-<!-- About the Project -->
-
-## :star2: About the Project
+## About the Project
 
 The "Deliveroo" app is a React Native Expo application for food delivery. It utilizes a variety of technologies to create a comprehensive solution. Here's an overview of the project:
 
-**Project Description:**
+### Project Description
+
 The "Deliveroo" app aims to provide a seamless food delivery experience to users. It offers a range of screens to facilitate different functionalities, including:
 
-1. Splash Screen: The initial screen that appears when the app is launched, providing branding and loading indicators.
+- **Splash Screen:**		Initial screen with branding and loading indicators.
+- **Login and Signup Screens:**	Enable users to create accounts or authenticate for personalized features.
+- **Dashboard Screen:**		Main screen to browse, search restaurants, explore menus, and place orders.
+- **Basket Screen:**		Display items in the user's basket for order review and modification.
+- **Profile Screen:**		Manage personal info, view order history, and customize preferences.
+- **Restaurant Screen:**	Detailed info about a specific restaurant, including menu, reviews, and location.
+- **Delivery Screen:**		Track the status and progress of ongoing food delivery, including estimated arrival time.
 
-2. Login and Signup Screens: These screens enable users to create accounts or authenticate themselves to access personalized features.
-
-3. Dashboard Screen: The main screen of the app where users can browse and search for available restaurants, explore menu items, and place orders.
-
-4. Basket Screen: This screen displays the items added to the user's basket, allowing them to review and modify their order before proceeding to checkout.
-
-5. Profile Screen: Users can manage their personal information, view order history, and customize their preferences on this screen.
-
-6. Restaurant Screen: Provides detailed information about a specific restaurant, including its menu, reviews, and location.
-
-7. Delivery Screen: Displays the status and progress of the user's ongoing food delivery, including estimated arrival time and tracking information.
-
-<!-- Screenshots -->
-
-### :camera: Screenshots
+## Screenshots
 
 <div style="display: inline_block" align="center">
 <br>
@@ -77,7 +43,7 @@ The "Deliveroo" app aims to provide a seamless food delivery experience to users
 </div>
 <br>
 
-### Technologies
+## Technologies
 
 ![React](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
@@ -93,98 +59,55 @@ The "Deliveroo" app aims to provide a seamless food delivery experience to users
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-<details>
-    <summary>Front-end</summary>
-    <ul>
-        <li>React Native</li>
-        <li>Redux</li>
-        <li>React Navigation</li>
-        <li>Tailwind CSS</li>
-    </ul>
-</details>
+### Front-end:
+- **React Native:** A popular JavaScript framework for building native mobile applications.
+- **Redux:** A state management library that helps manage the app's global state and facilitates data flow between components.
+- **React Navigation:** A routing and navigation library for React Native that allows seamless navigation between different screens.
+- **Tailwind CSS:** A utility-first CSS framework used for styling the app's user interface.
 
-<details>
-    <summary>API</summary>
-    <ul>
-        <li>Google Maps (Cloud API)</li>
-    </ul>
-</details>
+### API:
+- **Google Maps (Cloud API):** An API provided by Google Maps that enables integration with maps and location-based services.
 
-<details>
-    <summary>Back-end (Firebase)</summary>
-    <ul>
-        <li>Firestore</li>
-        <li>Firebase Authentication</li>
-        <li>Storage Bucket</li>
-        <li>Cloud Functions</li>
-        <li>GraphQL</li>
-        <li>Node JS</li>
-    </ul>
-</details>
-
-**Technologies Used:**
-The "Deliveroo" app incorporates the following technologies into its development stack:
-
-1. React Native: A popular JavaScript framework for building native mobile applications.
-
-2. Expo: A set of tools and services that simplifies the development of React Native applications.
-
-3. Firebase: A comprehensive platform for building mobile and web applications, used for authentication, data storage, and file storage.
-
-4. Node.js: A server-side JavaScript runtime that powers the backend server of the app, handling authentication, data retrieval, and server-side operations.
-
-5. GraphQL: A query language and runtime that enables efficient communication between the client and server, reducing unnecessary data transfers and improving performance.
-
-6. React Redux: A state management library that helps manage the app's global state and facilitates data flow between components.
-
-7. React Navigation: A routing and navigation library for React Native that allows seamless navigation between different screens.
-
-8. Tailwind CSS (Nativewind): A utility-first CSS framework used for styling the app's user interface.
-
-By leveraging these technologies, the "Deliveroo" app provides a feature-rich and user-friendly food delivery experience. The combination of React Native, Expo, Firebase, Node.js, GraphQL, React Redux, React Navigation, and Tailwind CSS contributes to the app's robustness, performance, and efficient data communication.
-
-<br />
-
-
+### Back-end (Firebase):
+- **Firestore:** A NoSQL database provided by Firebase for storing and syncing data in real-time.
+- **Firebase Authentication:** Firebase service for user authentication, enabling users to sign up and log in securely.
+- **Storage Bucket:** Firebase's storage service for storing and serving user-generated content like images and videos.
+- **Cloud Functions:** Serverless functions that run in response to events in Firebase, allowing custom server-side logic.
+- **GraphQL:** A query language and runtime that enables efficient communication between the client and server, reducing unnecessary data transfers and improving performance.
+- **Node JS:** A server-side JavaScript runtime that powers the backend server of the app, handling authentication, data retrieval, and server-side operations.
 
 ## Getting Started
 
-### Installation
+### Run Locally
 
 Install this project with expo using git-cli.
-
-<!-- Run Locally -->
-
-### Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/MaizNadeem/Deliveroo-2.0.git
+git clone https://github.com/MaizNadeem/Deliveroo-2.0.git
 ```
 
 Change directory
 
 ```bash
-  cd Deliveroo-2.0
+cd Deliveroo-2.0
 ```
 
 Install dependencies
 
-<a href="https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/package.json" target="_blank">🔶 Dependency Info</a>
-
 ```bash
-  npm install
+npm install
 ```
 
-### Setup Tailwind CSS
+Setup Tailwind CSS
 
 ```
 npm install nativewind
 npm install --save-dev nativewind
 ```
 
-Tailwindcss requires a `tailwind.config.js` file with the content section configured to include the paths to all of your components and any other source files that contain Tailwind class names.
+Tailwind CSS requires a `tailwind.config.js` file with the content section configured to include the paths to all of your components and any other source files that contain Tailwind class names.
 
 ```
 // tailwind.config.js
@@ -200,7 +123,7 @@ module.exports = {
 };
 ```
 
-##### Configure your babel.config.js
+Configure your babel.config.js
 
 ```
 // babel.config.js
@@ -219,12 +142,13 @@ module.exports = function (api) {
 Start the server
 
 ```bash
-  npx expo start
+npx expo start
 ```
-<hr />
 
-## :handshake: Contact
+## Contact
 
 Maiz - contact.maiznadeem@gmail.com
 
 Project Link: [https://github.com/MaizNadeem/Deliveroo-2.0.git](https://github.com/MaizNadeem/Deliveroo-2.0.git)
+
+---
