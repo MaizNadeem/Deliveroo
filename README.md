@@ -110,12 +110,12 @@ Update the `DeliveryScreen.js` file with your own Google Maps API key:
 const apiKey = "YOUR_API_KEY";
 ```
 
-   Replace `"YOUR_API_KEY"` with your actual Google Maps API key.
+4. Replace `"YOUR_API_KEY"` with your actual Google Maps API key obtained from Google Cloud Platform (cloud.google.com).
 5. Save the file after making the changes.
 
 Remember to handle sensitive information securely and avoid sharing API keys publicly.
 
-Start the server
+It's all! You can start the expo server now for development:
 
 ```bash
 npx expo start
