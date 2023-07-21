@@ -39,8 +39,9 @@ const DeliveryScreen = () => {
 
     const fetchDirections = async () => {
         try {
+            const apiKey = process.env.GOOGLE_MAPS_API_KEY;
             const response = await fetch(
-                `https://maps.googleapis.com/maps/api/directions/json?origin=${initialRegion.latitude},${initialRegion.longitude}&destination=${markerCoordinate.latitude},${markerCoordinate.longitude}&key=AIzaSyCVv_Mt6KB-YdfuZFeZYffix8TDGTvVSK8`
+              `https://maps.googleapis.com/maps/api/directions/json?origin=${initialRegion.latitude},${initialRegion.longitude}&destination=${markerCoordinate.latitude},${markerCoordinate.longitude}&key=${apiKey}`
             );
             const data = await response.json();
             const polylinePoints = data.routes[0].overview_polyline.points;
