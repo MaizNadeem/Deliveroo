@@ -100,44 +100,20 @@ Install dependencies
 npm install
 ```
 
-Setup Tailwind CSS
+Update the `DeliveryScreen.js` file with your own Google Maps API key:
 
-```
-npm install nativewind
-npm install --save-dev nativewind
-```
+1. Open the file located at `Deliveroo-2.0/screens/DeliveryScreen.js`.
+2. Look for the line `const apiKey = process.env.GOOGLE_MAPS_API_KEY;`.
+3. Replace `process.env.GOOGLE_MAPS_API_KEY` with your API key:
 
-Tailwind CSS requires a `tailwind.config.js` file with the content section configured to include the paths to all of your components and any other source files that contain Tailwind class names.
-
-```
-// tailwind.config.js
-module.exports = {
-  content: [
-    "./screens/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./firebase/**/*.{js,ts,jsx,tsx}",
-    "./*.{js,ts,jsx,tsx}",
-  ],
-  // ...
-};
+```javascript
+const apiKey = "YOUR_API_KEY";
 ```
 
-Configure your babel.config.js
+   Replace `"YOUR_API_KEY"` with your actual Google Maps API key.
+5. Save the file after making the changes.
 
-```
-// babel.config.js
-module.exports = function (api) {
-  api.cache(true);
-  return {
-    presets: ["babel-preset-expo"],
-    plugins: [
-      "nativewind/babel",
-      "react-native-reanimated/plugin",
-    ],
-  };
-};
-```
+Remember to handle sensitive information securely and avoid sharing API keys publicly.
 
 Start the server
 
