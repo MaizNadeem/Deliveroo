@@ -1,4 +1,4 @@
-![Banner Image](https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/Screenshots/Banner.png)
+![Banner Image](https://github.com/MaizNadeem/Deliveroo-2.0/blob/main/Screenshots/Deliveroo-Banner.png)
 
 # Deliveroo App
 
